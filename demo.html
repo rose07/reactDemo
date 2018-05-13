@@ -22,6 +22,8 @@
                 constructor(props) {
                     super(props);
                     this.state = {
+                        key:1,
+                        showPop:false,
                         header:[
                             {headerImg:"image/head-message.png"},
                             {headerMessage:"消息"},
@@ -55,14 +57,59 @@
                     ]        
                     }
                 }
+
+                onSelectItem=(it)=>{
+                    this.setState({
+                        key:it.key
+                    })
+                }
+
+                showPop = ()=>{
+                    this.setState((state)=>{
+                        return {
+                            showPop:!state.showPop
+                        };
+                    })
+                }
+
+                clickPopMain = ()=>{
+                    this.setState({
+                        showPop:false
+                    })
+                }
+
+                clickPop=(e)=>{
+                    e.stopPropagation();
+                }
                 
                  
                 render() {
                     return (
                         <div className="Contentapp-out">
-                            <Headerapp dataHead = {this.state.header} popData ={this.state.headpop}/>
-                            <Contentallapp dataContent = {this.state.content[0].list}/>
-                            <Footapp/>
+                            <Headerapp showPop={this.showPop} dataHead = {this.state.header} popData ={this.state.headpop}/>
+                            {
+                                this.state.key==1&&<Contentallapp1 dataContent = {this.state.content[0].list}/>
+                            }
+                            {
+                                this.state.key==2&&<Contentallapp2 dataContent = {this.state.content[0].list}/>
+                            }
+                            <Footapp onSelectItem={this.onSelectItem}/>
+                            {
+                                    this.state.showPop&&(
+                                        <div className="header-pop-out" onClick={this.clickPopMain}>
+                                            <div className="header-pop" onClick={this.clickPop}>
+                                                <img className="header-img-up" src="image/icon/up.png"/>
+                                                <ul className="header-up-ul">
+                                                    {
+                                                        this.state.headpop.map((key)=>{
+                                                            return (<li className="header-up-li">{key.name}</li>)
+                                                        })
+                                                    }
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    )
+                                }
                         </div>
                         )
                     
@@ -72,38 +119,31 @@
         class Headerapp extends React.Component {
                 constructor(props) {
                     super(props);
+                    this.state={
+                        showPop:false
+                    };
                 }
                 headSumTop=(e)=>{
-                    debugger
-                    alert(1111);
+                    this.props.showPop();
                 }
                 render() {
                     return (<div className="bar bar-header bar-positive head-content">
                                 <img className="header-img" src={this.props.dataHead[0].headerImg}/>
                                 <span className="header-message">{this.props.dataHead[1].headerMessage}</span>
                                 <img className="header-img-sum" onClick={this.headSumTop} src={this.props.dataHead[2].headerImgSum} />
-                                <div className="header-pop">
-                                    <img className="header-img-up" src="image/icon/up.png"/>
-                                    <ul className="header-up-ul">
-                                        {
-                                            this.props.popData.map((key)=>{
-                                                return (<li className="header-up-li">{key.name}</li>)
-                                            })
-                                        }
-                                    </ul>
-                                </div>
+                                
                             </div>)
                 }
         }
-        //内容
-        class Contentallapp extends React.Component{
+        //内容1
+        class Contentallapp1 extends React.Component{
             constructor(props) {
                     super(props);
                 }
                 render() {
                     return (
                         <div>
-                           { false&& <div className="content-all">
+                           { true && <div className="content-all">
                             {
                                 this.props.dataContent.map((item)=>{
                                     return(
@@ -117,8 +157,29 @@
                             }
                             </div>
                             }
-                            {true&&<div className ="content-popel"><h1>1122221111111111111</h1></div>}
+                            { false&&<div className ="content-popel"><h1>1122221111111111111</h1></div>}
 
+                        </div>
+                        
+                        )
+                }
+        }
+
+        //内容
+        class Contentallapp2 extends React.Component{
+            constructor(props) {
+                    super(props);
+                }
+                render() {
+                    return (
+                        <div>
+                           <p>内容2</p>
+                           <p>内容2</p>
+                           <p>内容2</p>
+                           <p>内容2</p>
+                           <p>内容2</p>
+                           <p>内容2</p>
+                           <p>内容2</p>
                         </div>
                         
                         )
@@ -129,14 +190,46 @@
         class Footapp extends React.Component{
             constructor(props) {
                     super(props);
+                    this.state={
+                        datas:[
+                            {
+                                icon:'ion-chatbubble-working',
+                                text:'消息'
+                            },
+                            {
+                                icon:'ion-person-add',
+                                text:'联系人'
+                            },
+                            {
+                                icon:'ion-eye',
+                                text:'看点'
+                            },
+                            {
+                                icon:'ion-star',
+                                text:'动态'
+                            }
+                        ]
+                    }
                 }
+                itemClick = (key)=>{
+                        this.props.onSelectItem({
+                            key:key
+                        });
+                    }
                 render() {
+                    
                     return (
                         <div className="bar bar-footer content-foot">
-                                <a  class="" onClick={this.message}><i className="icon ion-chatbubble-working foot-icon-i"></i><span className="foot-icon-text">消息</span></a>
-                                <a href="" className="" ><i className="icon ion-person-add foot-icon-i"></i><span className="foot-icon-text">联系人</span></a>
-                                <a href="" className=""><i className="icon ion-eye foot-icon-i"></i><span className="foot-icon-text">看点</span></a>
-                                <a href="" className=""><i className="icon ion-star foot-icon-i"></i><span className="foot-icon-text">动态</span></a>               
+                                {
+                                    this.state.datas.map((item,index)=>{
+                                        return (
+                                            <a  class="" onClick={()=>{this.itemClick(index+1)}}>
+                                                <i className={`icon ${item.icon} foot-icon-i`}></i>
+                                                <span className="foot-icon-text">{item.text}</span>
+                                            </a>
+                                        )
+                                    })
+                                }           
                         </div>
                     )
                 }

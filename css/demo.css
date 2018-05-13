@@ -167,7 +167,7 @@ body{
     background-color: #f6f6f6;
     position: fixed;
     right: 5px;
-    top: 127%;
+    top:10%;
     border-radius: 10px;
     /* display: none; */
 }
@@ -182,4 +182,17 @@ body{
 }
 .header-up-li{
     padding: 5px 10px;
+}
+
+
+
+
+.header-pop-out {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
 }
