@@ -1,0 +1,185 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", STXihei, STHeiti, Heiti, SimSun, sans-serif;
+    min-width: 414px;
+    min-height: 736px;
+}
+/* 头部 */
+/* .head-content{
+   background: -webkit-linear-gradient(left, #4a91fd, #14b9f7) !important;
+} */
+/* .header-img{
+    display: inline-block;
+    width: 35px;
+    margin-left: 10px;
+}
+
+.header-message{
+    display: inline-block;
+    text-align: center;
+    width: 95%;
+    line-height: 40px;
+    font-size: 16px;
+}
+.header-img-sum{
+    margin-top: 8px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+} */
+
+/* 内容 */
+/* .content{ 
+    margin-top: 45px;
+    width: 100%;
+    height: 630px;
+    overflow-y:scroll ;
+}
+.content-in{
+    min-height: 65px;
+    padding-top:0; 
+    padding-left: 80px !important;
+}
+.content-in-img{
+    top: 5px !important;
+    border-radius: 50%;
+    height: 50px !important;
+    width: 50px !important;
+}
+.content-in-h2{
+    font-size: 14px !important;
+    font-weight: bold !important;
+    margin-top: 7px !important;
+}
+.content-in-p{
+    font-size: 12px !important;
+} */
+/* 底部 */
+/* .content-foot{
+    height: 65px !important;
+}
+.foot-icon-i{
+    display: inline-block;
+    min-width: 90px;
+    font-size: 39px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #aaacad;
+}
+.foot-icon-text{
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    width: 76px;
+    height: 30px;
+    color: #aaacad;
+} */
+
+/* 外层 */
+.Contentapp-out{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: aqua;
+}
+
+/* 头部 */
+.head-content{
+    background: -webkit-linear-gradient(left, #4a91fd, #14b9f7) !important;
+}
+.header-img{
+    width: 10% ;
+    margin-left: 2%;
+}
+.header-message{
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+}
+.header-img-sum{
+    height: 72%;
+    width: 6%;
+    margin-top: 5px;
+}
+/* 内容 */
+/* 消息 */
+.content-all{
+    margin-top: 44px;
+    width: 100%;
+    height: 630px;
+    overflow-y:scroll ;
+}
+.content-in{
+    min-height: 65px;
+    padding-top:0; 
+    padding-left: 80px !important;
+}
+.content-in-img{
+    top: 5px !important;
+    border-radius: 50%;
+    height: 50px !important;
+    width: 50px !important;
+}
+.content-in-h2{
+    font-size: 14px !important;
+    font-weight: bold !important;
+    margin-top: 7px !important;
+}
+.content-in-p{
+    font-size: 12px !important;
+}
+/* 底部 */
+ .content-foot{
+    height: 65px !important;
+}
+.foot-icon-i{
+    display: inline-block;
+    width: 25%;
+    font-size: 39px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #aaacad;
+}
+.foot-icon-text{
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    width: 76px;
+    height: 30px;
+    color: #aaacad;
+}
+/* 联系人  */
+.content-popel{
+    margin-top: 44px;
+    color: pink;
+}
+ 
+/* 弹框 */
+
+.header-pop{
+    width: 40%;
+    background-color: #f6f6f6;
+    position: fixed;
+    right: 5px;
+    top: 127%;
+    border-radius: 10px;
+    /* display: none; */
+}
+.header-img-up{
+    display: block;
+    margin-top: -21px;
+    float: right;
+    margin-right: 5px;
+}
+.header-up-ul{
+    color: black;
+}
+.header-up-li{
+    padding: 5px 10px;
+}

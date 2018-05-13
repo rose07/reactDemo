@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html ng-app="ionicApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>React 页面+ionic</title>
+    <link href="https://cdn.bootcss.com/ionic/1.3.2/css/ionic.css" rel="stylesheet">
+    <!-- <script src="ionic.bundle.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+    <link href="css/demo.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="example">
+    </div>
+    <script type="text/babel">
+        //外层
+        class Contentapp extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.state = {
+                        header:[
+                            {headerImg:"image/head-message.png"},
+                            {headerMessage:"消息"},
+                            {headerImgSum:"image/head-sum.png"}
+                            ],
+                        content:[
+                                {list:[
+                                    {title:'别敷衍我',content:'Nine Inch Nails',show:true,img:'image/201859.jpg',num:1},
+                                    {title:'ooo',content:'Nine Inch Nails',show:false,img:'image/2018510.jpg'},
+                                    {title:'美梦因你',content:'Nine Inch Nails',show:false,img:'image/2018511.jpg'},
+                                    {title:'ooo',content:'Nine Inch Nails',show:false,img:'image/2018512.jpg'},
+                                    {title:'美梦因你',content:'Nine Inch Nails',show:true,img:'image/2018513.jpg'},
+                                    {title:'ooo',content:'Nine Inch Nails',show:false,img:'image/2018514.jpg'},
+                                    {title:'美梦因你',content:'Nine Inch Nails',show:false,img:'image/2018511.jpg'},
+                                    {title:'Pretty Hate Machine',content:'Nine Inch Nails',show:false,img:'image/2018513.jpg'},
+                                    {title:'美梦因你',content:'Nine Inch Nails',show:false,img:'image/2018510.jpg'},
+                                    {title:'Pretty Hate Machine',content:'Nine Inch Nails',show:false,img:'image/2018511.jpg'},
+                                    {title:'ooo',content:'Nine Inch Nails',show:false,img:'image/2018510.jpg'},
+                                    {title:'别敷衍我',content:'Nine Inch Nails',show:false,img:'image/2018511.jpg'},
+                                    {title:'Pretty Hate Machine',content:'Nine Inch Nails',show:false,img:'image/2018510.jpg'},
+                                    {title:'ooo',content:'Nine Inch Nails',show:false,img:'image/201859.jpg'}
+                                ]}
+                            ],
+                    headpop:[
+                        {name:'玩一玩'},
+                        {name:'好友'},
+                        {name:'扫一扫'},
+                        {name:'面对面'},
+                        {name:'拍摄'},
+                        {name:'付款'}
+                    ]        
+                    }
+                }
+                
+                 
+                render() {
+                    return (
+                        <div className="Contentapp-out">
+                            <Headerapp dataHead = {this.state.header} popData ={this.state.headpop}/>
+                            <Contentallapp dataContent = {this.state.content[0].list}/>
+                            <Footapp/>
+                        </div>
+                        )
+                    
+                }
+        }
+        //头部
+        class Headerapp extends React.Component {
+                constructor(props) {
+                    super(props);
+                }
+                headSumTop=(e)=>{
+                    debugger
+                    alert(1111);
+                }
+                render() {
+                    return (<div className="bar bar-header bar-positive head-content">
+                                <img className="header-img" src={this.props.dataHead[0].headerImg}/>
+                                <span className="header-message">{this.props.dataHead[1].headerMessage}</span>
+                                <img className="header-img-sum" onClick={this.headSumTop} src={this.props.dataHead[2].headerImgSum} />
+                                <div className="header-pop">
+                                    <img className="header-img-up" src="image/icon/up.png"/>
+                                    <ul className="header-up-ul">
+                                        {
+                                            this.props.popData.map((key)=>{
+                                                return (<li className="header-up-li">{key.name}</li>)
+                                            })
+                                        }
+                                    </ul>
+                                </div>
+                            </div>)
+                }
+        }
+        //内容
+        class Contentallapp extends React.Component{
+            constructor(props) {
+                    super(props);
+                }
+                render() {
+                    return (
+                        <div>
+                           { false&& <div className="content-all">
+                            {
+                                this.props.dataContent.map((item)=>{
+                                    return(
+                                        <a className="item item-thumbnail-left content-in" href="#">
+                                            <img className="content-in-img" src={item.img}/>
+                                            <h2 className ="content-in-h2">{item.title}</h2>
+                                            <p className="content-in-p">{item.content}</p>
+                                        </a>
+                                    )
+                                }) 
+                            }
+                            </div>
+                            }
+                            {true&&<div className ="content-popel"><h1>1122221111111111111</h1></div>}
+
+                        </div>
+                        
+                        )
+                }
+        }
+
+        //底部
+        class Footapp extends React.Component{
+            constructor(props) {
+                    super(props);
+                }
+                render() {
+                    return (
+                        <div className="bar bar-footer content-foot">
+                                <a  class="" onClick={this.message}><i className="icon ion-chatbubble-working foot-icon-i"></i><span className="foot-icon-text">消息</span></a>
+                                <a href="" className="" ><i className="icon ion-person-add foot-icon-i"></i><span className="foot-icon-text">联系人</span></a>
+                                <a href="" className=""><i className="icon ion-eye foot-icon-i"></i><span className="foot-icon-text">看点</span></a>
+                                <a href="" className=""><i className="icon ion-star foot-icon-i"></i><span className="foot-icon-text">动态</span></a>               
+                        </div>
+                    )
+                }
+        }
+        
+        
+
+        ReactDOM.render(
+            <Contentapp />,
+            document.getElementById('example')
+          );
+        </script>
+</body>
+
+</html>
