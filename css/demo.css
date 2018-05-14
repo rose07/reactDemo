@@ -7,84 +7,12 @@ body{
     min-width: 414px;
     min-height: 736px;
 }
-/* 头部 */
-/* .head-content{
-   background: -webkit-linear-gradient(left, #4a91fd, #14b9f7) !important;
-} */
-/* .header-img{
-    display: inline-block;
-    width: 35px;
-    margin-left: 10px;
-}
-
-.header-message{
-    display: inline-block;
-    text-align: center;
-    width: 95%;
-    line-height: 40px;
-    font-size: 16px;
-}
-.header-img-sum{
-    margin-top: 8px;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-} */
-
-/* 内容 */
-/* .content{ 
-    margin-top: 45px;
-    width: 100%;
-    height: 630px;
-    overflow-y:scroll ;
-}
-.content-in{
-    min-height: 65px;
-    padding-top:0; 
-    padding-left: 80px !important;
-}
-.content-in-img{
-    top: 5px !important;
-    border-radius: 50%;
-    height: 50px !important;
-    width: 50px !important;
-}
-.content-in-h2{
-    font-size: 14px !important;
-    font-weight: bold !important;
-    margin-top: 7px !important;
-}
-.content-in-p{
-    font-size: 12px !important;
-} */
-/* 底部 */
-/* .content-foot{
-    height: 65px !important;
-}
-.foot-icon-i{
-    display: inline-block;
-    min-width: 90px;
-    font-size: 39px;
-    margin-left: 20px;
-    text-decoration: none;
-    color: #aaacad;
-}
-.foot-icon-text{
-    display: inline-block;
-    text-align: center;
-    font-size: 12px;
-    width: 76px;
-    height: 30px;
-    color: #aaacad;
-} */
 
 /* 外层 */
 .Contentapp-out{
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    background-color: aqua;
 }
 
 /* 头部 */
@@ -112,7 +40,7 @@ body{
 .content-all{
     margin-top: 44px;
     width: 100%;
-    height: 630px;
+    height: 715px;
     overflow-y:scroll ;
 }
 .content-in{
@@ -133,6 +61,51 @@ body{
 }
 .content-in-p{
     font-size: 12px !important;
+}
+/* 内容4 */
+.content-all-four-out{
+    background: #f9f9fb;
+}
+.content-all-four{
+    width:100%;
+    background: #fff;
+    margin-bottom: 20px;
+}
+.content-all-four a{
+    display: inline-block;
+    height: 10%;
+    width: 26.3%;
+    margin-left: 18px;
+}
+.content-all-four img{
+    display: inline-block;
+    width: 40px;
+    margin: 10px 0 0 20px;
+}
+.content-all-four span{
+    display: block;
+}
+/* 内容4列表 */
+.content-all-four-ul {
+    width: 100%;
+    height: 715px;
+    overflow-y: scroll;
+}
+.content-all-four-ul li{
+    border-bottom: 1px solid #e1e1e1;
+    background-color: #fff;
+    line-height: 48px;
+}
+.content-all-four-ul li a{
+    display: inline-block;
+    margin-left: 35px;
+}
+.content-all-four-ul li a img{
+    vertical-align: middle;
+}
+.content-all-four-ul li a span{
+    font-size: 16px;
+    color: black;
 }
 /* 底部 */
  .content-foot{

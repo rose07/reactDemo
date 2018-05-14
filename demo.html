@@ -45,7 +45,32 @@
                                     {title:'别敷衍我',content:'Nine Inch Nails',show:false,img:'image/2018511.jpg'},
                                     {title:'Pretty Hate Machine',content:'Nine Inch Nails',show:false,img:'image/2018510.jpg'},
                                     {title:'ooo',content:'Nine Inch Nails',show:false,img:'image/201859.jpg'}
-                                ]}
+                                ]},
+                                // 动态 
+                              {dynamicContent:[
+                                  {
+                                    dynamic:[
+                                                {name:'动态',img:'image/icon/friendDynamic.png',alt:'friendDynamic'},
+                                                {name:'附近',img:'image/icon/near.png',alt:'near'},
+                                                {name:'兴趣',img:'image/icon/InterestTribal.png',alt:'InterestTribal'}
+                                            ]
+                                  },
+                                //   icon + 文字
+                                  {
+                                    iconText:[
+                                        {name:'游戏',icon:'game',img:'image/icon/game.png'},
+                                        {name:'购物',icon:'shopping',img:'image/icon/shopping.png'},
+                                        {name:'读书',icon:'ReadingBook',img:'image/icon/ReadingBook.png'},
+                                        {name:'音乐',icon:'music',img:'image/icon/music.png'},
+                                        {name:'运动',icon:'movement',img:'image/icon/movement.png'},
+                                        {name:'游戏',icon:'game',img:'image/icon/game.png'},
+                                        {name:'购物',icon:'shopping',img:'image/icon/shopping.png'},
+                                        {name:'读书',icon:'ReadingBook',img:'image/icon/ReadingBook.png'},
+                                        {name:'音乐',icon:'music',img:'image/icon/music.png'},
+                                        {name:'运动',icon:'movement',img:'image/icon/movement.png'}
+                                    ]
+                                  }
+                              ]}  
                             ],
                     headpop:[
                         {name:'玩一玩'},
@@ -56,8 +81,12 @@
                         {name:'付款'}
                     ]        
                     }
-                }
+                    
+                    this.state.content[1].dynamicContent[0].iconText
+                
 
+                }
+               
                 onSelectItem=(it)=>{
                     this.setState({
                         key:it.key
@@ -92,6 +121,12 @@
                             }
                             {
                                 this.state.key==2&&<Contentallapp2 dataContent = {this.state.content[0].list}/>
+                            }
+                            {
+                                this.state.key==3&&<Contentallapp3 dataContent = {this.state.content[0].list}/>
+                            }
+                            {
+                                this.state.key==4&&<Contentallapp4 dataContent4 = { this.state.content}/>
                             }
                             <Footapp onSelectItem={this.onSelectItem}/>
                             {
@@ -157,7 +192,7 @@
                             }
                             </div>
                             }
-                            { false&&<div className ="content-popel"><h1>1122221111111111111</h1></div>}
+                            
 
                         </div>
                         
@@ -165,21 +200,70 @@
                 }
         }
 
-        //内容
+        //内容2
         class Contentallapp2 extends React.Component{
             constructor(props) {
                     super(props);
                 }
                 render() {
                     return (
-                        <div>
+                        <div className="content-all">
+                            <h1>内容2</h1>
                            <p>内容2</p>
                            <p>内容2</p>
                            <p>内容2</p>
                            <p>内容2</p>
                            <p>内容2</p>
                            <p>内容2</p>
-                           <p>内容2</p>
+                        </div>
+                        
+                        )
+                }
+        }
+         //内容3
+         class Contentallapp3 extends React.Component{
+            constructor(props) {
+                    super(props);
+                }
+                render() {
+                    return (
+                        <div className="content-all">
+                            <h1>内容3</h1>
+                           
+                        </div>
+                        
+                        )
+                }
+        }
+        //内容4
+        class Contentallapp4 extends React.Component{
+            constructor(props) {
+                    super(props);
+                }
+                render() {
+                    return (
+                        <div className="content-all content-all-four-out">
+                            <div className ="content-all-four">
+                                {
+                                    this.props.dataContent4[1].dynamicContent[0].dynamic.map((item)=>{
+                                    return ( <a  class="" >
+                                                    <img src={item.img} />
+                                                    <span className="foot-icon-text">{item.name}</span>
+                                              </a>)
+                                    })
+                                }
+                            </div >
+                            <ul className ="content-all-four-ul"> 
+                                {
+                                    this.props.dataContent4[1].dynamicContent[1].iconText.map((it)=>{
+                                        return (<li><a  class="" >
+                                                    <img src={it.img} />
+                                                    <span className="foot-icon-text">{it.name}</span>
+                                              </a></li>)
+                                    })  
+                                }
+                            </ul>
+                        
                         </div>
                         
                         )
