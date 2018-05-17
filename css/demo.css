@@ -4,8 +4,11 @@
 }
 body{
     font-family: Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", STXihei, STHeiti, Heiti, SimSun, sans-serif;
+    width:414px;
+    height: 736px;
+    margin: 0 auto;
     min-width: 414px;
-    min-height: 736px;
+    min-height: 860px;
 }
 
 /* 外层 */
@@ -18,6 +21,8 @@ body{
 /* 头部 */
 .head-content{
     background: -webkit-linear-gradient(left, #4a91fd, #14b9f7) !important;
+    width: 414px;
+    margin: 0 auto;
 }
 .header-img{
     width: 10% ;
@@ -25,7 +30,7 @@ body{
 }
 .header-message{
     display: inline-block;
-    width: 80%;
+    width: 70%;
     text-align: center;
     line-height: 40px;
     font-size: 16px;
@@ -40,7 +45,7 @@ body{
 .content-all{
     margin-top: 44px;
     width: 100%;
-    height: 715px;
+    height: 700px;
     overflow-y:scroll ;
 }
 .content-in{
@@ -110,6 +115,8 @@ body{
 /* 底部 */
  .content-foot{
     height: 65px !important;
+    width: 414px;
+    margin: 0 auto;
 }
 .foot-icon-i{
     display: inline-block;
@@ -126,6 +133,10 @@ body{
     width: 76px;
     height: 30px;
     color: #aaacad;
+}
+/* 点击样式 */
+.addClass{
+    color:red;
 }
 /* 联系人  */
 .content-popel{
@@ -168,4 +179,64 @@ body{
     background: rgba(0, 0, 0, 0.4);
     width: 100%;
     height: 100%;
+}
+
+/* 内容3 */
+.content-all-three-out{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.content-all-three-img-out{
+    width: 100%;
+    height: 70px;
+}
+.content-all-three{
+    display: block;
+    width: 27%;
+    height: 74px;
+    margin-left: 10px;
+    float: left;
+}
+.content-all-three-h5{
+    width: 90%;
+    padding: 10px;
+    text-indent: 26px;
+}
+/* 内容2 */
+.content-all-two{
+    background-color: #f2efef;
+}
+.content-all-two-ul{
+    margin-bottom: 20px;
+}
+.content-all-two-li{
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    padding-left: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #e1dddd;
+    color: black;
+}
+.content-all-two-li-i{
+    display: inline-block;
+    float: right;
+    margin-right: 60px;
+    font-size: 20px;
+    color: gainsboro;
+}
+
+/* 内容2 下部分内容 */
+.content-all-two-under-out{
+    margin-top: 20px;
+}
+.content-all-two-under-in .content-all-two-under-in-header{
+    height: 40px;
+    line-height: 40px;
+    width: 18.2%;
+    text-align: center;
+    float: left;
+    background-color: #fff;
+    color:#7c7a7a;
+    border-bottom: 2px solid red;
 }
